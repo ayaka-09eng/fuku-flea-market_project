@@ -45,7 +45,7 @@ php artisan db:seed
 srcディレクトリにあるstorageディレクトリに権限を設定  
 chmod -R 777 storage  
   
-８）public/storageディレクトリをシンボリックリンクで結びつける  
+８）シンボリックリンクを作成  
 php artisan storage:link
   
 ９）Stripeのアカウントを作成  
@@ -78,14 +78,15 @@ Stripe Checkoutの動作確認には、以下のテストカード番号を使�
 ・有効期限：任意の未来日（例：12/34）  
 ・CVC：任意の3桁（例：123）  
   
-※この番号はStripeが公式に公開しているテストカードです。  
+※この番号はStripeが公式に公開しているテストカード  
 
 ## 管理者ユーザーおよび一般ユーザーのログイン情報
 Factoryにてユーザーを作成しているため、  
 ログインに必要なユーザー情報はphpMyAdminよりusersテーブルをご確認いただき、  
 任意のユーザーをご利用ください。  
+なお、ダミーユーザーのパスワードはすべて共通で「password」となっています。  
   
-※phpMyAdminのURLは以降の項目に記載があります。  
+※phpMyAdminのURLは以降の項目に記載あり  
 
 ## テストの実施方法
 ```  
@@ -94,7 +95,12 @@ docker-compose exec mysql bash
 mysql -u root -p  
 CREATE DATABASE demo_test;  
   
+※パスワードはdocker-compose.ymlの「MYSQL_ROOT_PASSWORD:」に記載  
+  
 ２）テスト用のアプリケーションキーを作成  
+exit  
+exit  
+docker-compose exec php bash  
 php artisan key:generate --env=testing  
   
 ３）キャッシュの削除  
