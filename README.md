@@ -45,31 +45,30 @@ php artisan db:seed
 srcディレクトリにあるstorageディレクトリに権限を設定  
 chmod -R 777 storage  
   
-８）Stripeのアカウントを作成  
+８）public/storageディレクトリをシンボリックリンクで結びつける  
+php artisan storage:link
+  
+９）Stripeのアカウントを作成  
 Stripeアカウント作成URL：https://dashboard.stripe.com/register?locale=ja-JP  
   
-９）Stripeにログインする  
+１０）Stripeにログインする  
 StripeログインURL：https://dashboard.stripe.com/  
   
-１０）左上の「サンドボックス」が表示されていることを確認する  
+１１）左上の「サンドボックス」が表示されていることを確認する  
 ※テストモードで問題無し  
   
-１１）左下の「開発者」をクリックする  
+１２）左下の「開発者」をクリックする  
 ※Standardアカウントでは本番・テストどちらでも同じ場所にある  
   
-１２）「API キー」を開く  
+１３）「API キー」を開く  
   
-１３）テスト用の秘密鍵（シークレットキー）を「.env」の最下部に設定する  
+１４）テスト用の秘密鍵（シークレットキー）を「.env」の最下部に設定する  
 ---  
 STRIPE_SECRET=sk_test_で始まるキー  
 ---  
 ※本プロジェクトではStripe Checkoutをサーバー側のみで使用しているため、  
 必要なのはStripeの「秘密鍵（Secret key）」のみ  
 公開鍵（公開可能キー）は使用しない  
-  
-１４）Stripe PHP SDK をインストール
-docker-compose exec php bash  
-composer require stripe/stripe-php  
 ```  
 
 ### Stripe テストカード番号
@@ -82,13 +81,27 @@ Stripe Checkoutの動作確認には、以下のテストカード番号を使�
 ※この番号はStripeが公式に公開しているテストカードです。  
 
 ## 管理者ユーザーおよび一般ユーザーのログイン情報
-本プロジェクトでは、あらかじめ用意されたダミーデータを使用してログインできます。  
-ユーザー情報はphpMyAdminからusersテーブルを確認してください。  
-ダミーユーザーのパスワードはすべて共通で「password」となっています。  
+Factoryにてユーザーを作成しているため、  
+ログインに必要なユーザー情報はphpMyAdminよりusersテーブルをご確認いただき、  
+任意のユーザーをご利用ください。  
+
+## テストの実施方法
+１）テスト用のデータベースを作成  
+docker-compose exec mysql bash  
+mysql -u root -p  
+CREATE DATABASE demo_test;  
   
-補足  
-・管理者ユーザーは本プロジェクトでは使用していません  
-・ログイン確認を行う際は、usersテーブルに登録されている任意のユーザーを利用できます  
+２）テスト用のアプリケーションキーを作成  
+php artisan key:generate --env=testing  
+  
+３）キャッシュの削除  
+php artisan config:clear  
+  
+４）テスト用のテーブルを作成  
+php artisan migrate --env=testing  
+  
+５）テストの実行  
+php artisan test  
 
 ## 使用技術(実行環境)
 PHP：8.1.34  

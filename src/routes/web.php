@@ -41,9 +41,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile/create', [UserController::class, 'create'])->name('profile.create');
     Route::post('/profile', [UserProfileController::class, 'store'])->name('profile.store');
     Route::get('/mypage', [UserProfileController::class, 'mypage'])->name('mypage');
-    Route::get('/mypage/profile/edit', [UserProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/mypage/profile', [UserProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/mypage/profile', [UserProfileController::class, 'update'])->name('profile.update');
-    Route::get('/sell/create', [ItemController::class, 'create'])->name('sell.create');
+    Route::get('/sell', [ItemController::class, 'create'])->name('sell.create');
     Route::post('/sell', [ItemController::class, 'store'])->name('sell.store');
     Route::post('/items/{id}/like', [ItemController::class, 'toggleLike'])->name('items.like');
     Route::post('/item/{item_id}/comments', [CommentController::class, 'store'])->name('comments.store');
