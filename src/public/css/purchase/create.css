@@ -1,0 +1,160 @@
+.purchase {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.purchase__form {
+    padding: 100px 70px;
+    display: flex;
+    gap: 100px;
+}
+
+.purchase__detail {
+    flex: 1;
+}
+
+.purchase__field {
+    display: flex;
+    align-items: start;
+    gap: 50px;
+}
+
+.purchase__img {
+    width: 250px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.purchase__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.purchase__name {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.purchase__price {
+    margin: 15px 0;
+    font-size: 25px;
+}
+
+.purchase__section-divider {
+    border: none;
+    border-bottom: 1.5px solid;
+}
+
+.purchase__section-wrapper {
+    margin: 20px;
+}
+
+.purchase__section-title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.purchase__payment-select {
+    margin: 30px 0 0 40px;
+    width: 250px;
+    padding: 4px;
+    font-weight: bold;
+    color: #5f5f5f;
+}
+
+.form__error {
+    margin-left: 40px;
+    min-height: 2rem;
+    color: red;
+}
+
+.purchase__section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchase__info {
+    margin: 30px 0 0 40px;
+}
+
+.purchase__postal-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.purchase__prefix {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.purchase__postal-code {
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+.purchase__address-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    gap: 3px;
+}
+
+.purchase__address,
+.purchase__building {
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+.purchase__summary {
+    width: 450px;
+    flex-shrink: 0;
+}
+
+.purchase__summary-box {
+    border: 1.5px solid;
+}
+
+.purchase__summary-row {
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchase__summary-row+.purchase__summary-row {
+    border-top: 1.5px solid;
+}
+
+.purchase__summary-label {
+    font-size: 18px;
+}
+
+.purchase__summary-price,
+.purchase__summary-method {
+    margin: 0;
+    font-size: 25px;
+}
+
+.purchase__summary-action {
+    margin-top: 50px;
+}
+
+.purchase__summary-submit {
+    width: 450px;
+    padding: 10px 0;
+    background: #ff5555;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}

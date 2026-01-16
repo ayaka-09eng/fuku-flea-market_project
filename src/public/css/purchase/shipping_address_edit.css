@@ -1,0 +1,60 @@
+.shipping-address-edit {
+    padding: 30px 0 50px 0;
+}
+
+.shipping-address-edit__container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.shipping-address-edit__title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.shipping-address-edit__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shipping-address-edit__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.shipping-address-edit__label {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.shipping-address-edit__input {
+    width: 600px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.form__error {
+    min-height: 2rem;
+    color: red;
+}
+
+.shipping-address-edit__action {
+    margin: 25px 0;
+}
+
+.shipping-address-edit__submit {
+    width: 600px;
+    padding: 7px 15px;
+    background: #ff5555;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
