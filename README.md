@@ -86,6 +86,7 @@ Factoryにてユーザーを作成しているため、
 任意のユーザーをご利用ください。  
 
 ## テストの実施方法
+```  
 １）テスト用のデータベースを作成  
 docker-compose exec mysql bash  
 mysql -u root -p  
@@ -102,6 +103,7 @@ php artisan migrate --env=testing
   
 ５）テストの実行  
 php artisan test  
+```  
 
 ## 使用技術(実行環境)
 PHP：8.1.34  
